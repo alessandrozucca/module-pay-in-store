@@ -31,7 +31,8 @@ class PayinstoreConfigProvider implements ConfigProviderInterface
     public function __construct(
         PaymentHelper $paymentHelper,
         Escaper $escaper
-    ) {
+    )
+    {
         $this->escaper = $escaper;
         foreach ($this->methodCodes as $code) {
             $this->methods[$code] = $paymentHelper->getMethodInstance($code);
