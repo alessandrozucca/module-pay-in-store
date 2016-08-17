@@ -37,7 +37,11 @@ class Success extends Template
     private function getStorePickupCode(\Magento\Sales\Api\Data\OrderPaymentInterface $payment)
     {
         $additionalInformation =  $payment->getAdditionalInformation();
-        return $additionalInformation['store_pickup_code'];
+        $pickupCode = '';
+        if (array_key_exists('store_pickup_code', $additionalInformation)) {
+            $pickupCode = $additionalInformation['store_pickup_code'];
+        }
+        return $pickupCode;
     }
 
     /**
