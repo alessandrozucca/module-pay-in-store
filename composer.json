@@ -1,0 +1,30 @@
+{
+  "name": "mageschool/module-pay-in-store",
+  "description": "Pay in store practice plugin",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "Apache-2.0"
+  ],
+  "require": {
+    "php": "~5.6.0|7.0.2|~7.0.6",
+    "magento/framework": "^100.1.0"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.magento.com/"
+    }
+  ],
+  "config": {
+    "bin-dir": "bin"
+  },
+  "autoload": {
+    "files": [
+      "src/PayInStore/registration.php"
+    ],
+    "psr-4": {
+      "MageSchool\\PayInStore\\": "src/PayInStore"
+    }
+  }
+}
