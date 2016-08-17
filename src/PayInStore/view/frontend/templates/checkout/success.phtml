@@ -1,8 +1,12 @@
 <?php
-// @codingStandardsIgnoreFile
-?>
-<?php /** @var $block \MageSchool\PayInStore\Block\Success */ ?>
+/**
+ * @codingStandardsIgnoreFile
+ * @escapeNotVerified
+ *
+ * @var $block \MageSchool\PayInStore\Block\Success
+ */
 
-<?php /* @escapeNotVerified */
-echo __('Please collect the order at the store bringing and Identification document and the code %s',
-    $block->getStorePickupCode()) ?>
+$pickupCode = $block->getStorePickupCodeFromLastPayment();
+if ($pickupCode) {
+    echo __('Please collect the order at the store bringing and Identification document and the code %1', $pickupCode);
+}
